@@ -38,7 +38,7 @@
     - pdo_mysql
 
 - name: Install composer locally
-  shell: curl -sS https://getcomposer.org/installer | php chdir={{ snipeit_source }} creates={{ snipeit_source }}/composer.phar
+  shell: wget --no-check-certificate https://getcomposer.org/installer | php chdir={{ snipeit_source }} creates={{ snipeit_source }}/composer.phar
 
 - name: Install php requirements with composer
   shell: php composer.phar install --prefer-source --no-interaction chdir={{ snipeit_source }}
